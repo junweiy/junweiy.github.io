@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Wargame 一 | 俊威小站</title>
+  <title>Wargame 四 | 俊威小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
+  <meta name="description" content="Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography. MooseWe found the following message scrawled on the">
 <meta name="keywords" content="Wargame,Cryptography">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wargame 一">
-<meta property="og:url" content="http://yoursite.com/2017/07/09/wargame1/index.html">
+<meta property="og:title" content="Wargame 四">
+<meta property="og:url" content="http://yoursite.com/2017/07/12/wargame4/index.html">
 <meta property="og:site_name" content="俊威小站">
-<meta property="og:description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
-<meta property="og:updated_time" content="2017-07-13T07:35:28.000Z">
+<meta property="og:description" content="Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography. MooseWe found the following message scrawled on the">
+<meta property="og:updated_time" content="2017-07-13T07:37:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wargame 一">
-<meta name="twitter:description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
+<meta name="twitter:title" content="Wargame 四">
+<meta name="twitter:description" content="Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography. MooseWe found the following message scrawled on the">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -134,34 +134,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-wargame1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-wargame4" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Wargame 一
+      Wargame 四
     </h1>
   
 
         
-        <a href="/2017/07/09/wargame1/" class="archive-article-date">
-  	<time datetime="2017-07-09T02:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+        <a href="/2017/07/12/wargame4/" class="archive-article-date">
+  	<time datetime="2017-07-12T03:10:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during lectures were given. As now the challenge has closed I would like to record how I solved or I failed to solve but I knew how those puzzles can be solved. I have to admit that those problems are really good practices to consolidate my understanding for this course, but we can’t just reuse the questions every year right?</p>
+        <p>Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography.</p>
+<h2 id="Moose"><a href="#Moose" class="headerlink" title="Moose"></a>Moose</h2><p>We found the following message scrawled on the side of a can of tinned moose, next to the body of one of our agents. The label reads:</p>
+<p>Moose (Alces alces) is the North American name for the largest extant species in the deer family. The same animal is called the Elk in Europe. The name moose is derived from the Algonquian Eastern Abnaki name moz, meaning “he trims, shaves”. Moose are distinguished by the palmate antlers of the males; other members of the family have antlers with a “twig-like” configuration. The name Elk is applied, in North America, to the second largest deer species.an animal also called the wapiti.</p>
 <a id="more"></a>
-<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><p>Here comes the first question:</p>
-<p>Decode me.<br><code>I5ZDQIDXN5ZGWIDNHAQSAWLPOUQGC4TFEBUGC6DYGBZCC===</code></p>
-<p>At the beginning of the wargame I was quite confused about the question, no any other clues? There are many encoding methods around how I can know the encoded text was encoded with which method? But when I looked at the three ‘=’ signs in the end, I realised that such method works in the form of blocks and the last block was padded with three signs! </p>
-<p>After doing some searching, I found the text might be encoded with the “base” family. Currently mostly used methods are base32 and base64, where the most obvious difference between them is the number of characters used for encoding. Base32 contains a character set of <code>a-z</code> and <code>2-7</code>, with a total number of 32 characters, whereas base64 uses <code>A-Z</code>, <code>a-z</code> and <code>0-9</code> for the first 62 values and the remaining two values can vary under different conditions.</p>
-<p>Now I am 95% confident that the text is encoded with base32 as it contains only capital letters and numbers between 2 and 7, so let’s find an online decoder to decode for us! After putting the text in, what we got back is <code>Gr8 work m8! You are haxx0r!</code>. Well done! It was a good start for the wargame and I did begin to have a sense of what I would expect throughout the whole semester.</p>
-<p>Learn More:<br><a href="https://en.wikipedia.org/wiki/Base32" target="_blank" rel="external">Base32</a><br><a href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="external">Base64</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">MPSDV DBDPC ZRIWJ PNCYZ XODEH KVXNP NSHML DCSIS CXVYR NPMIS PMHIZ IMLNC EVLML</div><div class="line">PQSBX DEINR LXTTN SIZXU DDTGI GBOAD RMGRF ESEVM FEEMV MWJRE ZRBWF DRZTX HSESR</div><div class="line">YZEFD MDRIV FDQTM XXTPN SWCKM LSDGC KJEEC YKTOL DZKCB EPPZV TXTCE FPMLK FRHHQ</div><div class="line">JVPSD XTTQC OSIKM JZNCI AWSZI SWLXM LPDVA HOYEK IAVSD TQEDT JWLDE CLFTN CYKTE</div><div class="line">CEHRB XHCEK EAXDF RHXMG BEINR IEFOU BEVTE LABSV LFTLK IZEFR OTZMK OPMDR BWVNA</div><div class="line">MELTB FSTNM MEPCD WUXOL CDWTL PKOYP</div></pre></td></tr></table></figure>
+<p>What is the key?</p>
+<p>This question is easy. By looking at the form of ciphertext and the fact that we are asked for the key, I would say it is likely to be encrypted with an alphabetic substitution cipher. After I randomly find a Vigenere online solver and plug in the ciphertext, the key can be easily retrieved.</p>
+<h2 id="Look-Deeper"><a href="#Look-Deeper" class="headerlink" title="Look Deeper"></a>Look Deeper</h2><p>It was&nbsp;the best&nbsp;of times, it was the worst&nbsp;of&nbsp;times, it was the age&nbsp;of wisdom,&nbsp;it&nbsp;was&nbsp;the age of&nbsp;foolishness,&nbsp;it was&nbsp;the&nbsp;epoch&nbsp;of belief, it&nbsp;was&nbsp;the epoch of&nbsp;incredulity,&nbsp;it&nbsp;was the&nbsp;season of Light, it&nbsp;was&nbsp;the season of&nbsp;Darkness,&nbsp;it was the&nbsp;spring&nbsp;of hope,&nbsp;it&nbsp;was the winter of&nbsp;despair,&nbsp;we had everything before us, we&nbsp;had&nbsp;nothing before&nbsp;us,&nbsp;we&nbsp;were all going&nbsp;direct&nbsp;to Heaven,&nbsp;we&nbsp;were&nbsp;all&nbsp;going direct&nbsp;the&nbsp;other&nbsp;way - in&nbsp;short,&nbsp;the period&nbsp;was&nbsp;so far like the&nbsp;present&nbsp;period, that&nbsp;some&nbsp;of its&nbsp;noisiest&nbsp;authorities&nbsp;insisted&nbsp;on its&nbsp;being&nbsp;received,&nbsp;for good or for evil, in&nbsp;the&nbsp;superlative degree of&nbsp;comparison only.&nbsp;Decrypt!</p>
+<p>At the beginning I had no idea of what’s going on in this question, but as the rule said we are not doing an arts course, the context itself must be useless. The trick of this question is to investigate the source code of the page, and you will find two types of space are used to make up this paragraph, which are normal space and non-breaking space respectively. If we take them out and replace them with 0 and 1, we will get a binary string <code>0101000001 ...</code>. Then after converting the binary string to ascii text the password will be revealed.</p>
+<p>This type of concealing secrets is really fun, another challenge released later has also stressed this type of technique.</p>
 
       
 
@@ -261,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/09/wargame1/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/12/wargame4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +277,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/11/wargame2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/13/wargame5/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Wargame 二
+          Wargame 五
         
       </div>
     </a>
   
   
-    <a href="/2017/07/08/hello/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小站新开张</div>
+    <a href="/2017/07/12/wargame3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Wargame 三</div>
       <i class="icon-circle-right"></i>
     </a>
   

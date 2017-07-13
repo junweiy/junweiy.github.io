@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Wargame 一 | 俊威小站</title>
+  <title>Tag: Cryptography | 俊威小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
-<meta name="keywords" content="Wargame,Cryptography">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Wargame 一">
-<meta property="og:url" content="http://yoursite.com/2017/07/09/wargame1/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="俊威小站">
+<meta property="og:url" content="http://yoursite.com/tags/Cryptography/index.html">
 <meta property="og:site_name" content="俊威小站">
-<meta property="og:description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
-<meta property="og:updated_time" content="2017-07-13T07:35:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wargame 一">
-<meta name="twitter:description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
+<meta name="twitter:title" content="俊威小站">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -134,68 +129,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-wargame1" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Wargame 一
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/13/hashcat/" class="archive-article-date">
+  	<time datetime="2017-07-13T07:36:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/13/hashcat/">如何使用Hashcat配合词典暴力破解Linux密码</a>
     </h1>
   
 
-        
-        <a href="/2017/07/09/wargame1/" class="archive-article-date">
-  	<time datetime="2017-07-09T02:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during lectures were given. As now the challenge has closed I would like to record how I solved or I failed to solve but I knew how those puzzles can be solved. I have to admit that those problems are really good practices to consolidate my understanding for this course, but we can’t just reuse the questions every year right?</p>
-<a id="more"></a>
-<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><p>Here comes the first question:</p>
-<p>Decode me.<br><code>I5ZDQIDXN5ZGWIDNHAQSAWLPOUQGC4TFEBUGC6DYGBZCC===</code></p>
-<p>At the beginning of the wargame I was quite confused about the question, no any other clues? There are many encoding methods around how I can know the encoded text was encoded with which method? But when I looked at the three ‘=’ signs in the end, I realised that such method works in the form of blocks and the last block was padded with three signs! </p>
-<p>After doing some searching, I found the text might be encoded with the “base” family. Currently mostly used methods are base32 and base64, where the most obvious difference between them is the number of characters used for encoding. Base32 contains a character set of <code>a-z</code> and <code>2-7</code>, with a total number of 32 characters, whereas base64 uses <code>A-Z</code>, <code>a-z</code> and <code>0-9</code> for the first 62 values and the remaining two values can vary under different conditions.</p>
-<p>Now I am 95% confident that the text is encoded with base32 as it contains only capital letters and numbers between 2 and 7, so let’s find an online decoder to decode for us! After putting the text in, what we got back is <code>Gr8 work m8! You are haxx0r!</code>. Well done! It was a good start for the wargame and I did begin to have a sense of what I would expect throughout the whole semester.</p>
-<p>Learn More:<br><a href="https://en.wikipedia.org/wiki/Base32" target="_blank" rel="external">Base32</a><br><a href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="external">Base64</a></p>
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
+          
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢请我吃Nene chicken～<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/wechat_qrcode.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/13/wargame5/" class="archive-article-date">
+  	<time datetime="2017-07-13T06:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/13/wargame5/">Wargame 五</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -211,98 +212,187 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/09/wargame1/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/12/wargame4/" class="archive-article-date">
+  	<time datetime="2017-07-12T03:10:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
+</a>
+        </div>
+    	 
   
-    <a href="/2017/07/11/wargame2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Wargame 二
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/08/hello/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小站新开张</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/12/wargame4/">Wargame 四</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Wargame</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/12/wargame3/" class="archive-article-date">
+  	<time datetime="2017-07-12T01:36:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/12/wargame3/">Wargame 三</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Wargame</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/11/wargame2/" class="archive-article-date">
+  	<time datetime="2017-07-11T12:34:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/11/wargame2/">Wargame 二</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Wargame</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/09/wargame1/" class="archive-article-date">
+  	<time datetime="2017-07-09T02:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/09/wargame1/">Wargame 一</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Wargame</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -325,9 +415,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

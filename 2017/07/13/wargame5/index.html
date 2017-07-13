@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Wargame 一 | 俊威小站</title>
+  <title>Wargame 五 | 俊威小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
+  <meta name="description" content="Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image. BrianWhilst hunting down Brian Krebs, the FBI">
 <meta name="keywords" content="Wargame,Cryptography">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wargame 一">
-<meta property="og:url" content="http://yoursite.com/2017/07/09/wargame1/index.html">
+<meta property="og:title" content="Wargame 五">
+<meta property="og:url" content="http://yoursite.com/2017/07/13/wargame5/index.html">
 <meta property="og:site_name" content="俊威小站">
-<meta property="og:description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
-<meta property="og:updated_time" content="2017-07-13T07:35:28.000Z">
+<meta property="og:description" content="Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image. BrianWhilst hunting down Brian Krebs, the FBI">
+<meta property="og:image" content="http://yoursite.com/assets/img/chrome2014.png">
+<meta property="og:updated_time" content="2017-07-13T07:35:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wargame 一">
-<meta name="twitter:description" content="In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during l">
+<meta name="twitter:title" content="Wargame 五">
+<meta name="twitter:description" content="Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image. BrianWhilst hunting down Brian Krebs, the FBI">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/chrome2014.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -134,34 +136,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-wargame1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-wargame5" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Wargame 一
+      Wargame 五
     </h1>
   
 
         
-        <a href="/2017/07/09/wargame1/" class="archive-article-date">
-  	<time datetime="2017-07-09T02:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+        <a href="/2017/07/13/wargame5/" class="archive-article-date">
+  	<time datetime="2017-07-13T06:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In the first semester of this year I took a unit about computer security, and the most fun part of this course is the wargame assessment, in which many challenges related to materials covered during lectures were given. As now the challenge has closed I would like to record how I solved or I failed to solve but I knew how those puzzles can be solved. I have to admit that those problems are really good practices to consolidate my understanding for this course, but we can’t just reuse the questions every year right?</p>
+        <p>Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image.</p>
+<h2 id="Brian"><a href="#Brian" class="headerlink" title="Brian"></a>Brian</h2><p>Whilst hunting down Brian Krebs, the FBI came across an encrypted note addressed to Brian. While it is encrypted, some people haven’t studied cryptography and make fundamental mistakes. Break the code and tell us where Brian was!</p>
 <a id="more"></a>
-<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><p>Here comes the first question:</p>
-<p>Decode me.<br><code>I5ZDQIDXN5ZGWIDNHAQSAWLPOUQGC4TFEBUGC6DYGBZCC===</code></p>
-<p>At the beginning of the wargame I was quite confused about the question, no any other clues? There are many encoding methods around how I can know the encoded text was encoded with which method? But when I looked at the three ‘=’ signs in the end, I realised that such method works in the form of blocks and the last block was padded with three signs! </p>
-<p>After doing some searching, I found the text might be encoded with the “base” family. Currently mostly used methods are base32 and base64, where the most obvious difference between them is the number of characters used for encoding. Base32 contains a character set of <code>a-z</code> and <code>2-7</code>, with a total number of 32 characters, whereas base64 uses <code>A-Z</code>, <code>a-z</code> and <code>0-9</code> for the first 62 values and the remaining two values can vary under different conditions.</p>
-<p>Now I am 95% confident that the text is encoded with base32 as it contains only capital letters and numbers between 2 and 7, so let’s find an online decoder to decode for us! After putting the text in, what we got back is <code>Gr8 work m8! You are haxx0r!</code>. Well done! It was a good start for the wargame and I did begin to have a sense of what I would expect throughout the whole semester.</p>
-<p>Learn More:<br><a href="https://en.wikipedia.org/wiki/Base32" target="_blank" rel="external">Base32</a><br><a href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="external">Base64</a></p>
+<p><code>VWPF WOBV CKKO GMCI FHFW DHCQ OZZO ZOPO M?WH VWBY KSGV CIZR QCBH WBIS KCFY WBUC BHVO HOBC BMAC IGAO FYSH DZOQ S</code></p>
+<p>This one is quite easy actually, simply replacing <code>?</code> with <code>A</code> and putting the whole ciphertext into a Vigenere solver will do the job, by the way the key is <code>oo</code>.</p>
+<h2 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h2><div style="text-align:center"><img src="/assets/img/chrome2014.png"></div>
+
+<p><code>Hint: Think simply. The message can contain at max 384 characters. This likely won&#39;t decode using a tool off the Internet. If it does, tell me!</code></p>
+<p>This one is really fun, the exact solution can be found from the slide, so we only need to implement it. Concisely, resolution of the image is 32*32, 1024 pixels in total, multiplying by 3 channels, 3072 bits available for concealing messages, which is where 384 bytes come from. The basic idea of storing the secret is to convert the message to binary first, and then alter the last bit of all pixels in each channel, which is hardly noticeable. </p>
+<p>Therefore to recover the secret, we can retrieve last bits for all pixels in all channels iteratively. Firstly we can import some useful functions to help us read the image into the form can be iterated through. Then we can iterate through the image and concatenate all digits to get the secret in binary form.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"></div><div class="line"><span class="comment"># Read the image and load as iterable format</span></div><div class="line">img = Image.open(<span class="string">'chrome2014.png'</span>)</div><div class="line">pix = img.load()</div><div class="line"></div><div class="line"><span class="comment"># Initialise msg</span></div><div class="line">msg = <span class="string">""</span></div><div class="line"></div><div class="line"><span class="comment"># Iterate through the image and extract secrets</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">32</span>):</div><div class="line">        msg = msg + bin(pix[j,i][<span class="number">0</span>])[<span class="number">-1</span>] + bin(pix[j,i][<span class="number">1</span>])[<span class="number">-1</span>] + bin(pix[j,i][<span class="number">2</span>])[<span class="number">-1</span>]</div><div class="line"></div><div class="line"><span class="comment"># Print out the secret</span></div><div class="line">print(msg)</div></pre></td></tr></table></figure>
+<p>After having obtained the secret, converting back to string will reveal the answer! Now all five entries have covered most of easy challenges, for other difficult challenges I also failed to solve them, that’s where you should put much efforts on :)</p>
 
       
 
@@ -261,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/09/wargame1/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/13/wargame5/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +281,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/11/wargame2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/13/hashcat/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Wargame 二
+          如何使用Hashcat配合词典暴力破解Linux密码
         
       </div>
     </a>
   
   
-    <a href="/2017/07/08/hello/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小站新开张</div>
+    <a href="/2017/07/12/wargame4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Wargame 四</div>
       <i class="icon-circle-right"></i>
     </a>
   
