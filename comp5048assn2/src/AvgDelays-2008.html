@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Average Delays for Featured Airports</title>
+        
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.9.min.css" type="text/css" />
+        
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.9.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+        <style>
+          html {
+            width: 100%;
+            height: 100%;
+          }
+          body {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div class="bk-root">
+            <div class="bk-plotdiv" id="9f6e3f58-43b9-4cf5-ae33-937fc8ca06d9"></div>
+        </div>
+        
+        <script type="text/javascript">
+            (function() {
+          var fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  var docs_json = {"e5693e32-2442-4176-b0c0-bc7229f47ddf":{"roots":{"references":[{"attributes":{},"id":"20503a08-19f1-4d70-8cc6-3844eed3853d","type":"BasicTickFormatter"},{"attributes":{"callback":null,"tooltips":[["index","$index"],["(Arrival Delays, Departure Delays)","(@arr_delays,@dep_delays)"],["Airport Name","@airportName"]]},"id":"0750f9e2-60c8-4e4b-940e-24f51b9d61cd","type":"HoverTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"id":"0750f9e2-60c8-4e4b-940e-24f51b9d61cd","type":"HoverTool"}]},"id":"19abdcd2-03e4-4388-9c97-ea6d1a500f79","type":"Toolbar"},{"attributes":{"plot":null,"text":"Average Delays for Featured Airports"},"id":"7bb857d7-5cd8-46db-9f30-611525bd173e","type":"Title"},{"attributes":{"fill_color":{"value":"coral"},"line_color":{"value":"coral"},"size":{"field":"size","units":"screen"},"x":{"field":"arr_delays"},"y":{"field":"dep_delays"}},"id":"9797c45f-fa86-4f8b-bb6a-b7a4f7b6032d","type":"Circle"},{"attributes":{"callback":null},"id":"f114ac1d-71ad-42d5-85da-4b3e9a4107bf","type":"DataRange1d"},{"attributes":{"source":{"id":"d747af28-30d9-4805-aa1c-700dee3e7072","type":"ColumnDataSource"}},"id":"ac579ece-4ac1-4e47-b283-9c9bc2726e4a","type":"CDSView"},{"attributes":{},"id":"afdf91c3-705b-45de-9f15-d955797e72b8","type":"LinearScale"},{"attributes":{},"id":"4ff7a82f-6258-428d-9b9e-678f2a4bb94b","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"field":"size","units":"screen"},"x":{"field":"arr_delays"},"y":{"field":"dep_delays"}},"id":"cbc3fd30-32a2-4b0d-8810-b194af9e6fb7","type":"Circle"},{"attributes":{"callback":null,"column_names":["arr_delays","dep_delays","airportName","size","fill_color"],"data":{"airportName":["John F Kennedy Intl","Miami International","Los Angeles International","Newark Intl","Chicago O'Hare International","William B Hartsfield-Atlanta Intl","San Francisco International","George Bush Intercontinental","Washington Dulles International","Dallas-Fort Worth International","Salt Lake City Intl","Charlotte/Douglas International","San Diego International-Lindbergh ","Tampa International ","Seattle-Tacoma Intl","Minneapolis-St Paul Intl","Portland Intl","Gen Edw L Logan Intl","Ronald Reagan Washington National"],"arr_delays":[44.03,33.47,28.94,53.07,48.15,32.97,40.24,31.16,38.5,30.52,25.0,27.72,26.4,29.57,28.12,30.76,27.21,38.09,28.57],"dep_delays":[45.13,33.31,26.66,50.9,46.66,35.06,37.5,31.25,39.33,33.41,25.74,28.76,23.83,26.27,26.37,35.31,26.57,38.6,29.95],"fill_color":["#933096","#69c596","#cb8596","#ae7d96","#db6f96","#73dd96","#6e8196","#a5a496","#77cc96","#cf8596","#493796","#40cd96","#d99796","#a69696","#373296","#5bdd96","#ade296","#86ce96","#acad96"],"size":[45.13,33.31,26.66,50.9,46.66,35.06,37.5,31.25,39.33,33.41,25.74,28.76,23.83,26.27,26.37,35.31,26.57,38.6,29.95]}},"id":"d747af28-30d9-4805-aa1c-700dee3e7072","type":"ColumnDataSource"},{"attributes":{"axis_label":"Arrival Delays (mins)","formatter":{"id":"20503a08-19f1-4d70-8cc6-3844eed3853d","type":"BasicTickFormatter"},"plot":{"id":"d0b7ff28-fa14-41bc-aed9-09fe70261a74","subtype":"Figure","type":"Plot"},"ticker":{"id":"08e976d7-86d3-4998-a120-1fc760a5633a","type":"BasicTicker"}},"id":"bde907f1-ab0d-4998-900c-c0a5fb9f68e9","type":"LinearAxis"},{"attributes":{"below":[{"id":"bde907f1-ab0d-4998-900c-c0a5fb9f68e9","type":"LinearAxis"}],"left":[{"id":"393f0b4c-61c9-4534-b1ad-0953af179e46","type":"LinearAxis"}],"plot_height":350,"plot_width":500,"renderers":[{"id":"bde907f1-ab0d-4998-900c-c0a5fb9f68e9","type":"LinearAxis"},{"id":"116535cd-6218-438f-8468-182c9b4e6513","type":"Grid"},{"id":"393f0b4c-61c9-4534-b1ad-0953af179e46","type":"LinearAxis"},{"id":"be6572ab-b8d4-4a9a-9ca2-33267c148f33","type":"Grid"},{"id":"8ca8f279-6f89-431f-8335-d3068ab4987a","type":"GlyphRenderer"}],"title":{"id":"7bb857d7-5cd8-46db-9f30-611525bd173e","type":"Title"},"toolbar":{"id":"19abdcd2-03e4-4388-9c97-ea6d1a500f79","type":"Toolbar"},"x_range":{"id":"c4ab0952-1b8c-40dc-8f05-25bc58bce096","type":"DataRange1d"},"x_scale":{"id":"afdf91c3-705b-45de-9f15-d955797e72b8","type":"LinearScale"},"y_range":{"id":"f114ac1d-71ad-42d5-85da-4b3e9a4107bf","type":"DataRange1d"},"y_scale":{"id":"4ff7a82f-6258-428d-9b9e-678f2a4bb94b","type":"LinearScale"}},"id":"d0b7ff28-fa14-41bc-aed9-09fe70261a74","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"08e976d7-86d3-4998-a120-1fc760a5633a","type":"BasicTicker"},{"attributes":{"plot":{"id":"d0b7ff28-fa14-41bc-aed9-09fe70261a74","subtype":"Figure","type":"Plot"},"ticker":{"id":"08e976d7-86d3-4998-a120-1fc760a5633a","type":"BasicTicker"}},"id":"116535cd-6218-438f-8468-182c9b4e6513","type":"Grid"},{"attributes":{"axis_label":"Departure Delays (mins)","formatter":{"id":"4290a3d5-abba-4eda-81af-f87df52206b6","type":"BasicTickFormatter"},"plot":{"id":"d0b7ff28-fa14-41bc-aed9-09fe70261a74","subtype":"Figure","type":"Plot"},"ticker":{"id":"ff2edcc0-7fad-43e9-bad5-804f4a8728e5","type":"BasicTicker"}},"id":"393f0b4c-61c9-4534-b1ad-0953af179e46","type":"LinearAxis"},{"attributes":{},"id":"4290a3d5-abba-4eda-81af-f87df52206b6","type":"BasicTickFormatter"},{"attributes":{},"id":"ff2edcc0-7fad-43e9-bad5-804f4a8728e5","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"d0b7ff28-fa14-41bc-aed9-09fe70261a74","subtype":"Figure","type":"Plot"},"ticker":{"id":"ff2edcc0-7fad-43e9-bad5-804f4a8728e5","type":"BasicTicker"}},"id":"be6572ab-b8d4-4a9a-9ca2-33267c148f33","type":"Grid"},{"attributes":{"data_source":{"id":"d747af28-30d9-4805-aa1c-700dee3e7072","type":"ColumnDataSource"},"glyph":{"id":"b4d8a4bb-8fb5-43d8-a6e8-2a151d5d7bf1","type":"Circle"},"hover_glyph":{"id":"9797c45f-fa86-4f8b-bb6a-b7a4f7b6032d","type":"Circle"},"muted_glyph":null,"nonselection_glyph":{"id":"cbc3fd30-32a2-4b0d-8810-b194af9e6fb7","type":"Circle"},"selection_glyph":null,"view":{"id":"ac579ece-4ac1-4e47-b283-9c9bc2726e4a","type":"CDSView"}},"id":"8ca8f279-6f89-431f-8335-d3068ab4987a","type":"GlyphRenderer"},{"attributes":{"callback":null},"id":"c4ab0952-1b8c-40dc-8f05-25bc58bce096","type":"DataRange1d"},{"attributes":{"fill_alpha":{"value":0.5},"fill_color":{"field":"fill_color"},"line_alpha":{"value":0.5},"line_color":{"value":"#1f77b4"},"size":{"field":"size","units":"screen"},"x":{"field":"arr_delays"},"y":{"field":"dep_delays"}},"id":"b4d8a4bb-8fb5-43d8-a6e8-2a151d5d7bf1","type":"Circle"}],"root_ids":["d0b7ff28-fa14-41bc-aed9-09fe70261a74"]},"title":"Bokeh Application","version":"0.12.9"}};
+                  var render_items = [{"docid":"e5693e32-2442-4176-b0c0-bc7229f47ddf","elementid":"9f6e3f58-43b9-4cf5-ae33-937fc8ca06d9","modelid":"d0b7ff28-fa14-41bc-aed9-09fe70261a74"}];
+              
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                }
+              
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  var attempts = 0;
+                  var timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      embed_document(root);
+                      clearInterval(timer);
+                    }
+                    attempts++;
+                    if (attempts > 100) {
+                      console.log("Bokeh: ERROR: Unable to embed document because BokehJS library is missing")
+                      clearInterval(timer);
+                    }
+                  }, 10, root)
+                }
+              })(window);
+            });
+          };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+        })();
+        
+        </script>
+    </body>
+</html>

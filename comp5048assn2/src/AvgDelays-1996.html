@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Average Delays for Featured Airports</title>
+        
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.9.min.css" type="text/css" />
+        
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.9.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+        <style>
+          html {
+            width: 100%;
+            height: 100%;
+          }
+          body {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div class="bk-root">
+            <div class="bk-plotdiv" id="9f5d3771-6b90-43ba-8998-92eef248eb1a"></div>
+        </div>
+        
+        <script type="text/javascript">
+            (function() {
+          var fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  var docs_json = {"d0fb0fad-bdc6-4461-86e1-2679e1065cac":{"roots":{"references":[{"attributes":{"callback":null,"tooltips":[["index","$index"],["(Arrival Delays, Departure Delays)","(@arr_delays,@dep_delays)"],["Airport Name","@airportName"]]},"id":"6bc2ce4d-ba77-40bd-a334-b386af31772c","type":"HoverTool"},{"attributes":{"callback":null,"column_names":["arr_delays","dep_delays","airportName","size","fill_color"],"data":{"airportName":["John F Kennedy Intl","Miami International","Los Angeles International","Newark Intl","Chicago O'Hare International","William B Hartsfield-Atlanta Intl","San Francisco International","George Bush Intercontinental","Washington Dulles International","Dallas-Fort Worth International","Salt Lake City Intl","Charlotte/Douglas International","San Diego International-Lindbergh ","Tampa International ","Seattle-Tacoma Intl","Minneapolis-St Paul Intl","Portland Intl","Gen Edw L Logan Intl","Ronald Reagan Washington National"],"arr_delays":[30.37,26.22,26.67,32.59,28.62,22.49,34.24,19.7,23.43,23.43,21.26,18.38,24.04,25.4,24.3,22.84,23.95,28.38,20.83],"dep_delays":[25.67,22.69,22.38,28.49,22.83,18.35,25.48,18.28,18.5,21.86,19.98,15.2,23.18,21.92,23.82,25.26,24.36,20.91,17.44],"fill_color":["#bcb596","#63bc96","#373d96","#377996","#a23396","#81db96","#bdd396","#72a396","#dc3c96","#da5c96","#9f3196","#ed7e96","#468696","#478296","#579d96","#dd7196","#716396","#bd2c96","#c78496"],"size":[25.67,22.69,22.38,28.49,22.83,18.35,25.48,18.28,18.5,21.86,19.98,15.2,23.18,21.92,23.82,25.26,24.36,20.91,17.44]}},"id":"bab7a4f8-4c73-47cc-9c56-f4ab05925041","type":"ColumnDataSource"},{"attributes":{},"id":"52afd8cd-dbd9-4984-acd3-f17b60d43eea","type":"BasicTicker"},{"attributes":{"fill_alpha":{"value":0.5},"fill_color":{"field":"fill_color"},"line_alpha":{"value":0.5},"line_color":{"value":"#1f77b4"},"size":{"field":"size","units":"screen"},"x":{"field":"arr_delays"},"y":{"field":"dep_delays"}},"id":"bc652778-3965-405a-9472-bf7b4a97d837","type":"Circle"},{"attributes":{},"id":"4ac70a9f-ab50-424b-883f-8e549e7cf399","type":"LinearScale"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"id":"6bc2ce4d-ba77-40bd-a334-b386af31772c","type":"HoverTool"}]},"id":"9cf88e26-b3b1-4b87-b8b1-bb755b4b79db","type":"Toolbar"},{"attributes":{"fill_color":{"value":"coral"},"line_color":{"value":"coral"},"size":{"field":"size","units":"screen"},"x":{"field":"arr_delays"},"y":{"field":"dep_delays"}},"id":"ef83abce-6090-44a4-974b-3188fd849ac3","type":"Circle"},{"attributes":{"dimension":1,"plot":{"id":"01d346d7-ad92-4d37-b7c1-e92aa61e02a4","subtype":"Figure","type":"Plot"},"ticker":{"id":"5ffaf554-0402-4800-b1c2-ef6fcf7383a9","type":"BasicTicker"}},"id":"cbe5468e-dca9-469d-af23-3dd571ea238d","type":"Grid"},{"attributes":{"source":{"id":"bab7a4f8-4c73-47cc-9c56-f4ab05925041","type":"ColumnDataSource"}},"id":"a0853a06-d51e-4a0c-be16-dad7578bdff4","type":"CDSView"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"field":"size","units":"screen"},"x":{"field":"arr_delays"},"y":{"field":"dep_delays"}},"id":"cff216c8-5e3c-4b5a-bcb4-97f24e857528","type":"Circle"},{"attributes":{"callback":null},"id":"d4647b16-e386-4107-8f66-e5a6b5417b48","type":"DataRange1d"},{"attributes":{},"id":"a4c152bd-ddfe-471d-bba3-78db8065d14c","type":"LinearScale"},{"attributes":{},"id":"9353b136-b005-47a9-bc2c-359b4d61c2bc","type":"BasicTickFormatter"},{"attributes":{"axis_label":"Departure Delays (mins)","formatter":{"id":"9353b136-b005-47a9-bc2c-359b4d61c2bc","type":"BasicTickFormatter"},"plot":{"id":"01d346d7-ad92-4d37-b7c1-e92aa61e02a4","subtype":"Figure","type":"Plot"},"ticker":{"id":"5ffaf554-0402-4800-b1c2-ef6fcf7383a9","type":"BasicTicker"}},"id":"e858c53c-aba4-4c4b-9933-6edefb993128","type":"LinearAxis"},{"attributes":{"callback":null},"id":"eff8e3ad-4fe4-4722-9404-45be48db39c0","type":"DataRange1d"},{"attributes":{"data_source":{"id":"bab7a4f8-4c73-47cc-9c56-f4ab05925041","type":"ColumnDataSource"},"glyph":{"id":"bc652778-3965-405a-9472-bf7b4a97d837","type":"Circle"},"hover_glyph":{"id":"ef83abce-6090-44a4-974b-3188fd849ac3","type":"Circle"},"muted_glyph":null,"nonselection_glyph":{"id":"cff216c8-5e3c-4b5a-bcb4-97f24e857528","type":"Circle"},"selection_glyph":null,"view":{"id":"a0853a06-d51e-4a0c-be16-dad7578bdff4","type":"CDSView"}},"id":"12ede00f-a177-4551-b667-f63170534f2c","type":"GlyphRenderer"},{"attributes":{},"id":"5ffaf554-0402-4800-b1c2-ef6fcf7383a9","type":"BasicTicker"},{"attributes":{"axis_label":"Arrival Delays (mins)","formatter":{"id":"07080ea9-f1e0-4c5a-87ca-ddbefd8fb208","type":"BasicTickFormatter"},"plot":{"id":"01d346d7-ad92-4d37-b7c1-e92aa61e02a4","subtype":"Figure","type":"Plot"},"ticker":{"id":"52afd8cd-dbd9-4984-acd3-f17b60d43eea","type":"BasicTicker"}},"id":"13c240c4-841d-4cd8-9464-541ec87e7031","type":"LinearAxis"},{"attributes":{},"id":"07080ea9-f1e0-4c5a-87ca-ddbefd8fb208","type":"BasicTickFormatter"},{"attributes":{"plot":null,"text":"Average Delays for Featured Airports"},"id":"43cae56e-df5b-4deb-80c5-30714288d049","type":"Title"},{"attributes":{"below":[{"id":"13c240c4-841d-4cd8-9464-541ec87e7031","type":"LinearAxis"}],"left":[{"id":"e858c53c-aba4-4c4b-9933-6edefb993128","type":"LinearAxis"}],"plot_height":350,"plot_width":500,"renderers":[{"id":"13c240c4-841d-4cd8-9464-541ec87e7031","type":"LinearAxis"},{"id":"0f8209b4-a6a0-4588-9e7a-71f6298447ac","type":"Grid"},{"id":"e858c53c-aba4-4c4b-9933-6edefb993128","type":"LinearAxis"},{"id":"cbe5468e-dca9-469d-af23-3dd571ea238d","type":"Grid"},{"id":"12ede00f-a177-4551-b667-f63170534f2c","type":"GlyphRenderer"}],"title":{"id":"43cae56e-df5b-4deb-80c5-30714288d049","type":"Title"},"toolbar":{"id":"9cf88e26-b3b1-4b87-b8b1-bb755b4b79db","type":"Toolbar"},"x_range":{"id":"eff8e3ad-4fe4-4722-9404-45be48db39c0","type":"DataRange1d"},"x_scale":{"id":"a4c152bd-ddfe-471d-bba3-78db8065d14c","type":"LinearScale"},"y_range":{"id":"d4647b16-e386-4107-8f66-e5a6b5417b48","type":"DataRange1d"},"y_scale":{"id":"4ac70a9f-ab50-424b-883f-8e549e7cf399","type":"LinearScale"}},"id":"01d346d7-ad92-4d37-b7c1-e92aa61e02a4","subtype":"Figure","type":"Plot"},{"attributes":{"plot":{"id":"01d346d7-ad92-4d37-b7c1-e92aa61e02a4","subtype":"Figure","type":"Plot"},"ticker":{"id":"52afd8cd-dbd9-4984-acd3-f17b60d43eea","type":"BasicTicker"}},"id":"0f8209b4-a6a0-4588-9e7a-71f6298447ac","type":"Grid"}],"root_ids":["01d346d7-ad92-4d37-b7c1-e92aa61e02a4"]},"title":"Bokeh Application","version":"0.12.9"}};
+                  var render_items = [{"docid":"d0fb0fad-bdc6-4461-86e1-2679e1065cac","elementid":"9f5d3771-6b90-43ba-8998-92eef248eb1a","modelid":"01d346d7-ad92-4d37-b7c1-e92aa61e02a4"}];
+              
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                }
+              
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  var attempts = 0;
+                  var timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      embed_document(root);
+                      clearInterval(timer);
+                    }
+                    attempts++;
+                    if (attempts > 100) {
+                      console.log("Bokeh: ERROR: Unable to embed document because BokehJS library is missing")
+                      clearInterval(timer);
+                    }
+                  }, 10, root)
+                }
+              })(window);
+            });
+          };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+        })();
+        
+        </script>
+    </body>
+</html>

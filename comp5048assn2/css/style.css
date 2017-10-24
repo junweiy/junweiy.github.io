@@ -1,0 +1,613 @@
+/****
+Initiallizing some formats for tags
+****/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background: #f2f2f2;
+}
+
+
+/* Main Body*/
+/*****************************
+Header Section
+*****************************/
+header{
+    background: rgb(63,63,63);
+    height: 3.75rem;
+    width: 100%;
+    box-shadow: 0 0 5px rgb(63,63,63);
+}
+
+header p{
+    font-size: 1.5rem;
+    line-height: 3.75rem;
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.overview{
+    width: 100%;
+    height: 9.375rem;
+    /*background: #00ffff;*/
+    margin-top: 1rem;
+}
+
+.overview .description{
+    width: 33%;
+    height: 9.375rem;
+    background: rgb(221,72,58);
+    float: left;
+    margin-left: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 5px rgb(221,72,58);
+}
+
+.overview .description .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+    // margin-left: 0.625rem;
+    color: #ffffff;
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+.overview .description p{
+    margin-left: 1.5rem;
+}
+
+.overview .sub-overview-1{
+    width: 20%;
+    height: 9.375rem;
+    background: rgb(26,188,156);
+    float: left;
+    margin-right: 20px;
+    margin-left: 1.125rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 5px rgb(26,188,156);
+}
+
+.overview .sub-overview-1 p{
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: bolder;
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+.general{
+    float: left;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    font-size: 2.5rem;
+    // font-weight: bold;
+}
+
+
+.overview .sub-overview-1 .img-content{
+    text-align: right;
+    // float: right;
+    padding-top: 2rem;
+}
+
+.overview .sub-overview-1 img{
+    width: 6.25rem;
+    height: 6.25rem;
+}
+
+.overview .sub-overview-2{
+    width: 20%;
+    height: 9.375rem;
+    background: rgb(53,152,219);
+    float: left;
+    margin-right: 1.125rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 5px rgb(53,152,219);
+}
+
+.overview .sub-overview-2 p{
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: bolder;
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+.overview .sub-overview-2 .img-content{
+    text-align: right;
+    padding-top: 1.65rem;
+}
+
+.overview .sub-overview-2 img{
+    width: 5.75rem;
+    height: 5.75rem;
+}
+
+.overview .sub-overview-3{
+    width: 20%;
+    height: 9.375rem;
+    background: rgb(154,89,181);
+    float: left;
+    margin-right: 1.125rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 5px rgb(154,89,181);
+}
+
+.overview .sub-overview-3 p{
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: bolder;
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+
+.overview .sub-overview-3 .img-content{
+    text-align: right;
+    // float: right;
+    padding-top: 1.65rem;
+}
+
+.overview .sub-overview-3 img{
+    width: 5.75rem;
+    height: 5.75rem;
+}
+
+@media screen and (max-width: 87.5rem) {
+    .overview .description{
+        width: 27%;
+        margin-left: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 30.25rem) and (max-width: 60.25rem) {
+    .overview{
+        height: 20rem;
+    }
+
+    .overview .description{
+        width: 40%;
+        margin-left: 4rem;
+    }
+
+    .overview .sub-overview-1{
+        width: 40%;
+    }
+
+    .overview .sub-overview-2{
+        width: 40%;
+        margin-left: 4rem;
+        margin-top: 0.8rem;
+    }
+
+    .overview .sub-overview-3{
+        width: 40%;
+        margin-top: 0.8rem;
+    }
+    
+}
+
+/****************************************
+Body Section
+*****************************************/
+.main-body{
+    width: 100%;
+    height: 184.1875rem;
+    // background: #ff0099;
+    margin-top: 1rem;
+}
+
+.scatterLayout{
+    width: 36%;
+    height: 32rem;
+    background: #ffffff;
+    float: left;
+    margin-left: 1.5rem;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.scatterLayout .scatter-desc{
+    background: #ffffff;
+    width: 100%;
+    height: 95px;
+}
+
+.desc-title{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.scatterLayout .scatter-desc .desc-content{
+    margin-left: 1.5rem;
+}
+
+.scatterLayout .linkage{
+    width: 100%;
+    height: 50px;
+    // background: #ff0000;
+    /*padding-left: 35px;*/
+    background-color: #555555;
+    line-height: 50px;
+}
+
+.linkage button{
+    float: left;
+    width: 52px;
+    height: 30px;
+    background-color: #008CBA;
+    line-height: 25px;
+    margin: 8px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.linkage button:hover{
+    background-color: #f44336;
+}
+
+.linkage button a{
+    color: white;
+    font-weight: bold;
+}
+
+.scatter{
+    width: 100%;
+    height: 21.875rem;
+    border-style: none;
+}
+
+.R-layout{
+    height: 32rem;
+    width: 59.5%;
+    background: #ffffff;
+    float: right;
+    margin-right: 1.5rem;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.R{
+    height: 32rem;
+    width: 100%;
+    border-style: none;
+}
+
+.nine-one-one{
+    width: 96.8%;
+    height: 28.125rem;
+    float: left;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+
+.j-tableau-layout{
+    width: 54.5%;
+    height: 28.125rem;
+    background-color: #ffffff;
+    float: left;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.j-tableau-layout .j-tableau{
+    width: 100%;
+    height: 28.125rem;
+    border-style: none;
+}
+
+.explanation{
+    width: 44%;
+    height: 28.125rem;
+    background-color: #ffffff;
+    float: right;
+    margin: 0 0 0 1rem;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.sub-explanation-1{
+    width: 100%;
+    height: 47.3%;
+    border-bottom: 8px solid #555555;
+}
+
+#arrow-1{
+    border: 20px solid #fff;
+    border-top-color: #008CBA;
+    width: 0;
+    height: 0;
+    float: right;
+}
+
+.explanation-content-1{
+    width: 70%;
+    height: 12.5rem;
+    float: left;
+}
+.explanation-content-1 p{
+    padding-left: 2.5rem;
+    padding-top: 0.4rem;
+}
+
+.sub-explanation-1 img{
+    width: 10rem;
+    height: 7.5rem;
+    padding-top: 2rem;
+    padding-left: 1rem;
+}
+
+.sub-explanation-2{
+    margin-top: 1rem;
+}
+
+#arrow-2{
+    border: 20px solid #fff;
+    border-left-color: #008CBA;
+    width: 0;
+    height: 0;
+    float: left;
+}
+
+.explanation-content-2{
+    width: 90%;
+    margin-left: 2rem;
+    margin-top: 0.3rem;
+}
+
+.explanation-content-2 p{
+    margin-top: 0.3rem;
+}
+
+.weather-and-others{
+    width: 96.8%;
+    height: 83.125rem;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+
+.boxplot{
+    width: 26%;
+    height: 83.125rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #ccc;
+    float: left;
+}
+
+.boxplot-btn{
+    width: 100%;
+    height: 3.125rem;
+    background-color: #555555;
+}
+
+.boxplot-btn button{
+    float: left;
+    width: 160px;
+    height: 30px;
+    background-color: #008CBA;
+    line-height: 25px;
+    margin: 0.625rem 0 0 1.25rem;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.boxplot-btn button:hover{
+    background-color: #f44336;
+}
+
+.boxplot-btn button a{
+    color: white;
+    font-weight: bold;
+}
+
+.boxplot-iframe{
+    width: 100%;
+    height: 80rem;
+    border: none;
+}
+
+.real-boxplot{
+    width: 73%;
+    height: 22.5rem;
+    float: right;
+}
+
+.real-boxplot-desc{
+    width: 51%;
+    height: 22.5rem;
+    float: left;
+    // box-shadow: 0 0 10px #ccc;
+}
+
+.boxplot-desc-1{
+    width: 100%;
+    height: 70%;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #ffffff;
+}
+
+#arrow-3{
+    border: 20px solid #fff;
+    border-left-color: #008CBA;
+    width: 0;
+    height: 0;
+    float: left;
+}
+
+.boxplot-desc-content-1{
+    width:92.5%;
+    height: 100%;
+    float: right;
+}
+
+.boxplot-desc-content-1 p{
+    padding-top: 0.3rem;
+}
+
+.boxplot-desc-content-1-title{
+    font-weight: bold;
+}
+
+.boxplot-desc-2{
+    width: 100%;
+    height: 25.5%;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 1rem;
+    background-color: #ffffff;
+}
+
+#arrow-4{
+    border: 20px solid #fff;
+    border-right-color: #008CBA;
+    width: 0;
+    height: 0;
+    float: right;
+}
+
+.boxplot-desc-content-2{
+    width:92.5%;
+    height: 100%;
+    float: left;
+}
+
+.boxplot-desc-content-2 p{
+    padding-top: 0.8rem;
+    margin-left: 1.5rem;
+}
+
+.real-boxplot-graph{
+    width: 47.5%;
+    height: 22.5rem;
+    float: right;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #ffffff;
+}
+
+.real-boxplot-iframe{
+    width: 31.25rem;
+    height: 22.5rem;
+    border: none;
+}
+
+.line-graph{
+    width: 73%;
+    height: 71.5%;
+    float: right;
+    margin-top: 1.2rem;
+    // box-shadow: 0 0 10px #ccc;
+}
+
+.line-graph .line-graph-1{
+    width: 49%;
+    height: 65%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #ccc;
+    float: left;
+}
+
+.weather-iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.line-graph .line-graph-2{
+    width: 49%;
+    height: 65%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #ccc;
+    float: right;
+}
+
+.piechart{
+    width: 60%;
+    height: 33.5%;
+    background-color: #ffffff;
+    float: left;
+    margin-top: 0.95rem;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.chart-desc{
+    width: 38.5%;
+    height: 33.5%;
+    float: right;
+    margin-top: 0.95rem;
+    box-shadow: 0 0 10px #ccc;
+}
+
+
+.line-chart-desc{
+    width: 100%;
+    height: 56%;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #ffffff;
+}
+
+.line-chart-desc h3{
+    padding: 0.6rem 0 0 0.8rem;
+}
+.line-chart-desc p{
+    padding: 0.2rem 0.3rem 0 0.8rem
+}
+
+#arrow-5{
+    border: 17px solid #fff;
+    border-top-color: #008CBA;
+    width: 0;
+    height: 0;
+    float: right;
+}
+
+.piechart-desc{
+    width: 100%;
+    height: 39%;
+    margin-top: 1rem;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #ffffff;
+}
+
+#arrow-6{
+    border: 17px solid #fff;
+    border-left-color: #008CBA;
+    width: 0;
+    height: 0;
+    float: left;
+}
+
+.tableau-layout{
+    width: 96.8%;
+    height: 37.5rem;
+    background: #ffffff;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.tableau{
+    width: 100%;
+    height: 100%;
+    border-style: none;
+}
+
+footer{
+    width: 100%;
+    height: 3rem;
+    background: rgb(63,63,63);
+    margin-top: 1rem;
+    box-shadow: 0 0 10px #ccc;
+}
+
+footer p{
+    line-height: 3rem;
+    text-align: center;
+    color: #ffffff;
+}

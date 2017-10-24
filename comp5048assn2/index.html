@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Performance Analyses</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <p>Interactive GUI - Group 28 Flight Performance Analyses</p>
+    </header>
+    
+    <div class="overview">
+        <div class="description">
+            <p class="title">The Data</p>
+            <p><strong>- Dates:</strong> <em>day of month, date, month, year</em></p>
+            <p><strong>- Times:</strong> <em>Arrival and Departure Delays in minutes</em></p>
+            <p><strong>- Original and Destiniation:</strong> <em>Carrier code, airport code, Latitude and Longitude</em></p>
+            <p><strong>- Weather data:</strong> <em>Visibility, precipitation and weather status</em></p>
+        </div>
+        <div class="sub-overview-1">
+            <p>Total Airports</p>
+            <div class="general">3376</div>
+            <div class="img-content">
+                <img src="./img/airport.png">
+            </div>
+        </div>
+        <div class="sub-overview-2">
+            <p>Total Fly Times</p>
+            <div class="general">242M Hrs</div>
+            <div class="img-content">
+                <img src="./img/time.png">
+            </div>
+        </div>
+        <div class="sub-overview-3">
+            <p>Total Flight Distance</p>
+            <div class="general">865B MLs</div>
+            <div class="img-content">
+                <img src="./img/distance.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="main-body">
+        <div class="scatterLayout">
+            <div class="scatter-desc">
+                <p class="desc-title">Average Departure & Arrival Delays</p>
+                <p class="desc-content">1. Most of the arrival delays are between 15-25 Mins</p>
+                <p class="desc-content">2. Arrival and departure delays have linear relations</p>
+                <p class="desc-content">3. Charlotte has the best performance among chosen airports</p>
+            </div>
+            <div class="linkage">
+                <button type="button"><a href="./src/AvgDelays-1987.html" target="nfrm">1987</a></button>
+                <button type="button"><a href="./src/AvgDelays-1990.html" target="nfrm">1990</a></button>
+                <button type="button"><a href="./src/AvgDelays-1993.html" target="nfrm">1993</a></button>
+                <button type="button"><a href="./src/AvgDelays-1996.html" target="nfrm">1996</a></button>
+                <button type="button"><a href="./src/AvgDelays-1999.html" target="nfrm">1999</a></button>
+                <button type="button"><a href="./src/AvgDelays-2003.html" target="nfrm">2002</a></button>
+                <button type="button"><a href="./src/AvgDelays-2005.html" target="nfrm">2005</a></button>
+                <button type="button"><a href="./src/AvgDelays-2008.html" target="nfrm">2008</a></button>
+            </div>
+        
+            <iframe src="./src/AvgDelays-1987.html" class="scatter" name="nfrm"></iframe>
+        </div>
+
+        <div class="R-layout">
+            <iframe class="R" src="https://jdon3970.shinyapps.io/comp5048/" name="nfrm1"
+            scrolling="yes"></iframe>
+        </div>
+        
+        <div class="nine-one-one">
+            <div class="j-tableau-layout">
+                <iframe class="j-tableau" src="./src/j-tableau.html" name="nfrm1"
+                scrolling="no"></iframe>
+            </div>
+
+            <div class="explanation">
+                <div class="sub-explanation-1">
+                    <div class="arrow-1" id="arrow-1"></div>
+                    <div class="explanation-content-1">
+                        <p>1. Departure delay is usually more linear than &nbsp;&nbsp;&nbsp;&nbsp;arrival delay</p>
+                        <p>2. Average delay time has an increasing trend in &nbsp;&nbsp;&nbsp;&nbsp;recent couple of years.</p>
+                        <p>3. Fly in April, May and Sepember</p>
+                        <p>4. Avoid flying in December</p>
+                        <p>5. Fly in Saturday and Tuesday.</p>
+                        <p>6. Different airports have different extent of delay</p>
+                    </div>
+                    <img src="./img/flight_delays.png" alt="">
+                </div>
+                <div class="sub-explanation-2">
+                    <div class="arrow-2" id="arrow-2"></div>
+                    <div class="explanation-content-2">
+                        <p>1. All flights in New York and Washington were canceled right after the &nbsp;&nbsp;&nbsp;&nbsp;911 attack, and started to recover 2 days after the attack.</p>
+                        <p>&nbsp;&nbsp;2. There is a strong correlation between departure and arrival cancellation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rates for all carriers operating in both cities.</p>
+                        <p>&nbsp;&nbsp;3. Trans World, Northwest and America West are the first three carriers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recovering their businesses to a normal level in New York, whereas Southwest, Trans World and American are the first three in Washington. </p>
+                        <p>&nbsp;&nbsp;4. It took much longer for airports in Washington to regain flight volumes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;than those in New York.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="weather-and-others">
+            <div class="boxplot">
+                <div class="boxplot-btn">
+                    <button type="button"><a href="./src/cancel_heatmap.html" target="nfrm-b">Cancel Rate</a></button>
+                    <button type="button"><a href="./src/delay_heatmap.html" target="nfrm-b">Delay Rate</a></button>
+                </div>
+                <iframe src="./src/cancel_heatmap.html" class="boxplot-iframe" name="nfrm-b" scrolling="no"></iframe>
+            </div>
+            
+            <div class="real-boxplot">
+                <div class="real-boxplot-desc">
+                    <div class="boxplot-desc-1">
+                        <div class="arrow-3" id="arrow-3"></div>
+                        <div class="boxplot-desc-content-1">
+                            <p class="boxplot-desc-content-1-title">Delay Heatmap:</p>
+                            <p>1. Expect to have higher delay when traveling in summer.</p>
+                            <p>2. Southwest is much more punctual than other carriers on &nbsp;&nbsp;&nbsp;&nbsp;average.</p>
+                            <p>3. Delays are gradually getting worse since 2001.</p>
+                            <p class="boxplot-desc-content-1-title">Cancel Heatmap:</p>
+                            <p>1. After 911 attacks in 2001 cancellation rates become much &nbsp;&nbsp;&nbsp;&nbsp;lower.</p>
+                            <p>2. April and May have the lowest cancellation rate (fly). </p>
+                            <p>3. Jan and Feb have the highest cancellation rate (avoid).</p>
+                        </div>
+                    </div>
+                    <div class="boxplot-desc-2">
+                        <div class="arrow-4" id="arrow-4"></div>
+                        <div class="boxplot-desc-content-2">
+                            <p>Choose airlines with better on-time performances (e.g. Hawaiian, US and Frontier) and avoid airlines with worse and unstable delays (e.g. JetBlue Airways).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="real-boxplot-graph">
+                    <iframe src="./src/boxplot.html" class="real-boxplot-iframe" name="nfrm-b" scrolling="no"></iframe>
+                </div>
+            </div>
+
+            <div class="line-graph">
+                <div class="line-graph-1">
+                    <iframe src="./src/MiamiWeatherAndDelays.html" class="weather-iframe" name="nfrm-w" scrolling="no"></iframe>
+                </div>
+                <div class="line-graph-2">
+                    <iframe src="./src/NewYork.html" class="weather-iframe" name="nfrm-w" scrolling="no"></iframe>
+                </div>
+
+                <div class="piechart">
+
+                </div>
+
+                <div class="chart-desc">
+                    <div class="line-chart-desc">
+                        <div class="arrow-5" id="arrow-5"></div>
+                        <h3><u>Weather Influence on Delays</u></h3>
+                        <p>1. Delays are highly correlated with weather status.</p>
+                        <p>2. When precipitation is high, delay becomes &nbsp;&nbsp;&nbsp;&nbsp;serious.</p>
+                        <p>3. When visibility is low, delays are also severe.</p>
+                        <p>4. Delays are affected by combination of visibility &nbsp;&nbsp;&nbsp;&nbsp;and precipitation or snow and fog.</p>
+                    </div>
+                    <div class="piechart-desc">
+                        <div class="arrow-6" id="arrow-6"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tableau-layout">
+            <iframe class="tableau" src="./src/Tableau.html" name="nfrm1" scrolling="no"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>Interactive GUI Created by Group 28 for COMP5048 Visual Analytics</p>
+    </footer>
+
+</body>
+</html>
