@@ -21,232 +21,201 @@ Header Section
 *****************************/
 header{
     background: rgb(63,63,63);
-    height: 3.75rem;
+    height: 60px;
     width: 100%;
     box-shadow: 0 0 5px rgb(63,63,63);
 }
 
-header p{
-    font-size: 1.5rem;
-    line-height: 3.75rem;
+.header{
+    width: 700px;
+    height: 60px;
+}
+
+.header p{
+    font-size: 24px;
+    line-height: 60px;
     color: #ffffff;
     font-weight: bold;
-    padding-left: 1rem;
+    padding-left: 16px;
 }
 
 .overview{
-    width: 100%;
-    height: 9.375rem;
-    /*background: #00ffff;*/
-    margin-top: 1rem;
+    width: 1472px;
+    height: 150px;
+    margin: 16px auto;
 }
 
 .overview .description{
-    width: 33%;
-    height: 9.375rem;
+    width: 500px;
+    height: 150px;
     background: rgb(221,72,58);
     float: left;
-    margin-left: 1.5rem;
-    border-radius: 0.625rem;
+    // margin-left: 1.5rem;
+    border-radius: 10px;
     box-shadow: 0 0 5px rgb(221,72,58);
 }
 
 .overview .description .title{
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: bold;
     // margin-left: 0.625rem;
     color: #ffffff;
-    margin: 0.5rem 0 0 0.5rem;
+    margin: 8px 0 0 8px;
 }
 
 .overview .description p{
-    margin-left: 1.5rem;
+    margin-left: 24px;
 }
 
 .overview .sub-overview-1{
-    width: 20%;
-    height: 9.375rem;
+    width: 304px;
+    height: 150px;
     background: rgb(26,188,156);
     float: left;
-    margin-right: 20px;
-    margin-left: 1.125rem;
-    border-radius: 0.625rem;
+    margin-left: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 5px rgb(26,188,156);
 }
 
 .overview .sub-overview-1 p{
-    font-size: 1.25rem;
+    font-size: 20px;
     color: #ffffff;
     font-weight: bolder;
-    margin: 0.5rem 0 0 0.5rem;
+    margin: 8px 0 0 8px;
 }
 
 .general{
     float: left;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-    font-size: 2.5rem;
-    // font-weight: bold;
+    margin-top: 24px;
+    margin-left: 24px;
+    font-size: 38px;
 }
 
 
 .overview .sub-overview-1 .img-content{
     text-align: right;
-    // float: right;
-    padding-top: 2rem;
+    padding-top: 32px;
 }
 
 .overview .sub-overview-1 img{
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 100px;
+    height: 100px;
 }
 
 .overview .sub-overview-2{
-    width: 20%;
-    height: 9.375rem;
+    width: 304px;
+    height: 150px;
     background: rgb(53,152,219);
     float: left;
-    margin-right: 1.125rem;
-    border-radius: 0.625rem;
+    margin-left: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 5px rgb(53,152,219);
 }
 
 .overview .sub-overview-2 p{
-    font-size: 1.25rem;
+    font-size: 20px;
     color: #ffffff;
     font-weight: bolder;
-    margin: 0.5rem 0 0 0.5rem;
+    margin: 8px 0 0 8px;
 }
 
 .overview .sub-overview-2 .img-content{
     text-align: right;
-    padding-top: 1.65rem;
+    padding-top: 26px;
 }
 
 .overview .sub-overview-2 img{
-    width: 5.75rem;
-    height: 5.75rem;
+    width: 92px;
+    height: 92px;
 }
 
 .overview .sub-overview-3{
-    width: 20%;
-    height: 9.375rem;
+    width: 304px;
+    height: 150px;
     background: rgb(154,89,181);
     float: left;
-    margin-right: 1.125rem;
-    border-radius: 0.625rem;
+    margin-left: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 5px rgb(154,89,181);
 }
 
 .overview .sub-overview-3 p{
-    font-size: 1.25rem;
+    font-size: 20px;
     color: #ffffff;
     font-weight: bolder;
-    margin: 0.5rem 0 0 0.5rem;
+    margin: 8px 0 0 8px;
 }
 
 
 .overview .sub-overview-3 .img-content{
     text-align: right;
-    // float: right;
-    padding-top: 1.65rem;
+    padding-top: 26px;
 }
 
 .overview .sub-overview-3 img{
-    width: 5.75rem;
-    height: 5.75rem;
+    width: 92px;
+    height: 92px;
 }
 
-@media screen and (max-width: 87.5rem) {
-    .overview .description{
-        width: 27%;
-        margin-left: 2.5rem;
-    }
-}
-
-@media screen and (min-width: 30.25rem) and (max-width: 60.25rem) {
-    .overview{
-        height: 20rem;
-    }
-
-    .overview .description{
-        width: 40%;
-        margin-left: 4rem;
-    }
-
-    .overview .sub-overview-1{
-        width: 40%;
-    }
-
-    .overview .sub-overview-2{
-        width: 40%;
-        margin-left: 4rem;
-        margin-top: 0.8rem;
-    }
-
-    .overview .sub-overview-3{
-        width: 40%;
-        margin-top: 0.8rem;
-    }
-    
-}
 
 /****************************************
 Body Section
 *****************************************/
 .main-body{
-    width: 100%;
+    width: 1520px;
     height: 184.1875rem;
-    // background: #ff0099;
-    margin-top: 1rem;
+    margin-top: 16px;
+}
+
+.scatter-R{
+    width: 1472px;
+    height: 512px;
+    margin: 0 auto;
 }
 
 .scatterLayout{
-    width: 36%;
-    height: 32rem;
+    width: 530px;
+    height: 512px;
     background: #ffffff;
     float: left;
-    margin-left: 1.5rem;
     box-shadow: 0 0 10px #ccc;
 }
 
 .scatterLayout .scatter-desc{
     background: #ffffff;
-    width: 100%;
+    width: 530px;
     height: 95px;
 }
 
 .desc-title{
     text-align: center;
     font-weight: bold;
-    margin-top: 0.5rem;
+    margin-top: 8px;
 }
 
 .scatterLayout .scatter-desc .desc-content{
-    margin-left: 1.5rem;
+    margin-left: 24px;
 }
 
 .scatterLayout .linkage{
-    width: 100%;
+    width: 530px;
     height: 50px;
-    // background: #ff0000;
-    /*padding-left: 35px;*/
     background-color: #555555;
     line-height: 50px;
+    text-align: center;
 }
 
 .linkage button{
-    float: left;
-    width: 52px;
-    height: 30px;
-    background-color: #008CBA;
+    width: 53px;
+    height: 28px;
     line-height: 25px;
-    margin: 8px;
-    margin-top: 10px;
-    text-align: center;
     border-radius: 3px;
     border: none;
     cursor: pointer;
+}
+
+.linkage button + button{
+    margin-left: 8px;
 }
 
 .linkage button:hover{
@@ -254,59 +223,64 @@ Body Section
 }
 
 .linkage button a{
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
+.colorChange{
+    background-color: red;
+}
+
+
 .scatter{
-    width: 100%;
-    height: 21.875rem;
+    width: 530px;
+    height: 350px;
     border-style: none;
 }
 
 .R-layout{
-    height: 32rem;
-    width: 59.5%;
+    height: 512px;
+    width: 922px;
     background: #ffffff;
-    float: right;
-    margin-right: 1.5rem;
+    float: left;
+    margin-left: 20px;
     box-shadow: 0 0 10px #ccc;
 }
 
 .R{
-    height: 32rem;
+    height: 512px;
     width: 100%;
     border-style: none;
 }
 
 .nine-one-one{
-    width: 96.8%;
-    height: 28.125rem;
+    width: 1472px;
+    height: 450px;
     float: left;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
+    display: block;
+    margin: 16px 0 0 24px;
 }
 
 .j-tableau-layout{
     width: 54.5%;
-    height: 28.125rem;
+    height: 450px;
     background-color: #ffffff;
     float: left;
     box-shadow: 0 0 10px #ccc;
 }
 
-.j-tableau-layout .j-tableau{
+.j-tableau{
     width: 100%;
-    height: 28.125rem;
+    height: 100%;
     border-style: none;
 }
 
 .explanation{
-    width: 44%;
-    height: 28.125rem;
+    width: 648px;
+    height: 450px;
     background-color: #ffffff;
-    float: right;
-    margin: 0 0 0 1rem;
+    float: left;
+    margin: 0 0 0 20px;
     box-shadow: 0 0 10px #ccc;
 }
 
@@ -325,24 +299,28 @@ Body Section
 }
 
 .explanation-content-1{
-    width: 70%;
-    height: 12.5rem;
+    width: 65%;
+    height: 200px;
     float: left;
+    margin: 8px 5px 0 22px;
 }
+
 .explanation-content-1 p{
-    padding-left: 2.5rem;
-    padding-top: 0.4rem;
+    margin-top: 6px;
 }
 
 .sub-explanation-1 img{
-    width: 10rem;
-    height: 7.5rem;
-    padding-top: 2rem;
-    padding-left: 1rem;
+    width: 160px;
+    height: 120px;
+    padding-top: 32px;
+    padding-left: 16px;
 }
 
 .sub-explanation-2{
     margin-top: 1rem;
+    width: 100%;
+    height: 210px;
+    float: right;
 }
 
 #arrow-2{
@@ -354,26 +332,25 @@ Body Section
 }
 
 .explanation-content-2{
-    width: 90%;
-    margin-left: 2rem;
-    margin-top: 0.3rem;
+    width: 590px;
+    height: 210px;
+    float: left;
 }
 
 .explanation-content-2 p{
-    margin-top: 0.3rem;
+    margin-top: 10px;
 }
 
 .weather-and-others{
-    width: 96.8%;
-    height: 83.125rem;
+    width: 1472px;
+    height: 1330px;
     display: inline-block;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
+    margin: 16px 0 0 24px;
 }
 
 .boxplot{
-    width: 26%;
-    height: 83.125rem;
+    width: 383px;
+    height: 1330px;
     background-color: #ffffff;
     box-shadow: 0 0 10px #ccc;
     float: left;
@@ -381,21 +358,22 @@ Body Section
 
 .boxplot-btn{
     width: 100%;
-    height: 3.125rem;
+    height: 50px;
     background-color: #555555;
+    text-align: center;
+    line-height: 45px;
 }
 
 .boxplot-btn button{
-    float: left;
-    width: 160px;
+    width: 40%;
     height: 30px;
-    background-color: #008CBA;
-    line-height: 25px;
-    margin: 0.625rem 0 0 1.25rem;
-    text-align: center;
     border-radius: 3px;
     border: none;
     cursor: pointer;
+}
+
+.boxplot-btn button + button{
+    margin-left: 20px;
 }
 
 .boxplot-btn button:hover{
@@ -403,27 +381,26 @@ Body Section
 }
 
 .boxplot-btn button a{
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
 .boxplot-iframe{
     width: 100%;
-    height: 80rem;
+    height: 1280px;
     border: none;
 }
 
 .real-boxplot{
-    width: 73%;
-    height: 22.5rem;
+    width: 1070px;
+    height: 360px;
     float: right;
 }
 
 .real-boxplot-desc{
-    width: 51%;
-    height: 22.5rem;
+    width: 535px;
+    height: 360px;
     float: left;
-    // box-shadow: 0 0 10px #ccc;
 }
 
 .boxplot-desc-1{
@@ -442,13 +419,13 @@ Body Section
 }
 
 .boxplot-desc-content-1{
-    width:92.5%;
+    width: 92.5%;
     height: 100%;
     float: right;
 }
 
 .boxplot-desc-content-1 p{
-    padding-top: 0.3rem;
+    padding-top: 4.8px;
 }
 
 .boxplot-desc-content-1-title{
@@ -459,7 +436,7 @@ Body Section
     width: 100%;
     height: 25.5%;
     box-shadow: 0 0 10px #ccc;
-    margin-top: 1rem;
+    margin-top: 16px;
     background-color: #ffffff;
 }
 
@@ -478,30 +455,29 @@ Body Section
 }
 
 .boxplot-desc-content-2 p{
-    padding-top: 0.8rem;
-    margin-left: 1.5rem;
+    padding-top: 12.8px;
+    margin-left: 24px;
 }
 
 .real-boxplot-graph{
-    width: 47.5%;
-    height: 22.5rem;
+    width: 512px;
+    height: 360px;
     float: right;
     box-shadow: 0 0 10px #ccc;
     background-color: #ffffff;
 }
 
 .real-boxplot-iframe{
-    width: 31.25rem;
-    height: 22.5rem;
+    width: 512px;
+    height: 360px;
     border: none;
 }
 
 .line-graph{
-    width: 73%;
+    width: 1070px;
     height: 71.5%;
     float: right;
-    margin-top: 1.2rem;
-    // box-shadow: 0 0 10px #ccc;
+    margin-top: 19.2px;
 }
 
 .line-graph .line-graph-1{
@@ -526,23 +502,64 @@ Body Section
     float: right;
 }
 
+
 .piechart{
     width: 60%;
     height: 33.5%;
     background-color: #ffffff;
     float: left;
-    margin-top: 0.95rem;
+    margin-top: 15.2px;
     box-shadow: 0 0 10px #ccc;
+}
+
+.pc{
+    width: 80%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+}
+
+.pc-btn{
+    width: 19%;
+    height: 100%;
+    background: #555555;
+    float: left;
+}
+
+.pc-btn button{
+    width: 80%;
+    height: 13%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.pc-btn button:hover{
+    background-color: #f44336;
+}
+
+.pc-btn button a{
+    color: black;
+    font-weight: bold;
+}
+
+.pc-iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .chart-desc{
     width: 38.5%;
     height: 33.5%;
     float: right;
-    margin-top: 0.95rem;
+    margin-top: 15.2px;
     box-shadow: 0 0 10px #ccc;
 }
-
 
 .line-chart-desc{
     width: 100%;
@@ -552,10 +569,22 @@ Body Section
 }
 
 .line-chart-desc h3{
-    padding: 0.6rem 0 0 0.8rem;
+    padding: 9.6px 0 0 12.8px;
 }
 .line-chart-desc p{
-    padding: 0.2rem 0.3rem 0 0.8rem
+    padding: 3.2px 4.8px 0 12.8px;
+}
+
+.pc-desc-content{
+    width: 85%;
+    height: 100%;
+    float: right;
+    margin-right: 12.8px;
+}
+
+.pc-desc-content p{
+    margin-top: 4.8px;
+    padding-top: 4.8px;
 }
 
 #arrow-5{
@@ -569,7 +598,7 @@ Body Section
 .piechart-desc{
     width: 100%;
     height: 39%;
-    margin-top: 1rem;
+    margin-top: 16px;
     box-shadow: 0 0 10px #ccc;
     background-color: #ffffff;
 }
@@ -583,12 +612,12 @@ Body Section
 }
 
 .tableau-layout{
-    width: 96.8%;
-    height: 37.5rem;
+    width: 1472px;
+    height: 600px;
     background: #ffffff;
     display: inline-block;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
+    margin-top: 16px;
+    margin-left: 24px;
     box-shadow: 0 0 10px #ccc;
 }
 
@@ -600,14 +629,14 @@ Body Section
 
 footer{
     width: 100%;
-    height: 3rem;
+    height: 48px;
     background: rgb(63,63,63);
-    margin-top: 1rem;
+    margin-top: 16px;
     box-shadow: 0 0 10px #ccc;
 }
 
 footer p{
-    line-height: 3rem;
+    line-height: 48px;
     text-align: center;
     color: #ffffff;
 }
