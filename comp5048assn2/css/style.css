@@ -29,6 +29,7 @@ header{
 .header{
     width: 700px;
     height: 60px;
+    margin: 0 auto;
 }
 
 .header p{
@@ -36,7 +37,6 @@ header{
     line-height: 60px;
     color: #ffffff;
     font-weight: bold;
-    padding-left: 16px;
 }
 
 .overview{
@@ -164,7 +164,7 @@ Body Section
 .main-body{
     width: 1520px;
     height: 184.1875rem;
-    margin-top: 16px;
+    margin: 16px auto;
 }
 
 .scatter-R{
