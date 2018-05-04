@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://junweiyang.me">
-  <title>Archives: 2017/7 | 俊威小站</title>
+  <title>ELEC5616 Wargame 五 | 俊威小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="俊威小站">
-<meta property="og:url" content="http://junweiyang.me/archives/2017/07/index.html">
+  <meta name="description" content="Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image. BrianWhilst hunting down Brian Krebs, the FBI">
+<meta name="keywords" content="Wargame,Cryptography">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ELEC5616 Wargame 五">
+<meta property="og:url" content="http://junweiyang.me/2017/07/13/wargame5/index.html">
 <meta property="og:site_name" content="俊威小站">
+<meta property="og:description" content="Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image. BrianWhilst hunting down Brian Krebs, the FBI">
+<meta property="og:image" content="http://junweiyang.me/assets/img/chrome2014.png">
+<meta property="og:updated_time" content="2017-07-17T02:13:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="俊威小站">
+<meta name="twitter:title" content="ELEC5616 Wargame 五">
+<meta name="twitter:description" content="Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image. BrianWhilst hunting down Brian Krebs, the FBI">
+<meta name="twitter:image" content="http://junweiyang.me/assets/img/chrome2014.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -129,60 +136,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-wargame5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/08/hello/" class="archive-article-date">
-  	<time datetime="2017-07-08T02:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/08/hello/">小站新开张</a>
+    <h1 class="article-title" itemprop="name">
+      ELEC5616 Wargame 五
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/13/wargame5/" class="archive-article-date">
+  	<time datetime="2017-07-13T06:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Two more challenges will be discussed in this entry, one is about breaking Vigenere cipher and the other one is about revealing information from an image.</p>
+<h2 id="Brian"><a href="#Brian" class="headerlink" title="Brian"></a>Brian</h2><p>Whilst hunting down Brian Krebs, the FBI came across an encrypted note addressed to Brian. While it is encrypted, some people haven’t studied cryptography and make fundamental mistakes. Break the code and tell us where Brian was!</p>
+<a id="more"></a>
+<p><code>VWPF WOBV CKKO GMCI FHFW DHCQ OZZO ZOPO M?WH VWBY KSGV CIZR QCBH WBIS KCFY WBUC BHVO HOBC BMAC IGAO FYSH DZOQ S</code></p>
+<p>This one is quite easy actually, simply replacing <code>?</code> with <code>A</code> and putting the whole ciphertext into a Vigenere solver will do the job, by the way the key is <code>oo</code>.</p>
+<h2 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h2><div style="text-align:center"><img src="/assets/img/chrome2014.png"></div>
+
+<p><code>Hint: Think simply. The message can contain at max 384 characters. This likely won&#39;t decode using a tool off the Internet. If it does, tell me!</code></p>
+<p>This one is really fun, the exact solution can be found from the slide, so we only need to implement it. Concisely, resolution of the image is 32*32, 1024 pixels in total, multiplying by 3 channels, 3072 bits available for concealing messages, which is where 384 bytes come from. The basic idea of storing the secret is to convert the message to binary first, and then alter the last bit of all pixels in each channel, which is hardly noticeable. </p>
+<p>Therefore to recover the secret, we can retrieve last bits for all pixels in all channels iteratively. Firstly we can import some useful functions to help us read the image into the form can be iterated through. Then we can iterate through the image and concatenate all digits to get the secret in binary form.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"></div><div class="line"><span class="comment"># Read the image and load as iterable format</span></div><div class="line">img = Image.open(<span class="string">'chrome2014.png'</span>)</div><div class="line">pix = img.load()</div><div class="line"></div><div class="line"><span class="comment"># Initialise msg</span></div><div class="line">msg = <span class="string">""</span></div><div class="line"></div><div class="line"><span class="comment"># Iterate through the image and extract secrets</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">32</span>):</div><div class="line">        msg = msg + bin(pix[j,i][<span class="number">0</span>])[<span class="number">-1</span>] + bin(pix[j,i][<span class="number">1</span>])[<span class="number">-1</span>] + bin(pix[j,i][<span class="number">2</span>])[<span class="number">-1</span>]</div><div class="line"></div><div class="line"><span class="comment"># Print out the secret</span></div><div class="line">print(msg)</div></pre></td></tr></table></figure>
+<p>After having obtained the secret, converting back to string will reveal the answer! Now all five entries have covered most of easy challenges, for other difficult challenges I also failed to solve them, that’s where you should put much efforts on :)</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢请我吃Nene chicken～<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat_qrcode.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hello</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Wargame</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://junweiyang.me/2017/07/13/wargame5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/07/12/wargame4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ELEC5616 Wargame 四</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -192,7 +309,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Junwei
+    		&copy; 2017 Junwei
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -205,8 +322,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -285,6 +402,14 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Wargame</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cryptography</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hello</a>

@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://junweiyang.me">
-  <title>Archives: 2017/7 | 俊威小站</title>
+  <title>ELEC5616 Wargame 二 | 俊威小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="俊威小站">
-<meta property="og:url" content="http://junweiyang.me/archives/2017/07/index.html">
+  <meta name="description" content="Following with the previous challenge, I will continue from where I left off last time. Dodgy DaveDodgy Dave runs a betting agency. He sends out a hash the day before a big horse race to gullible bett">
+<meta name="keywords" content="Wargame,Cryptography">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ELEC5616 Wargame 二">
+<meta property="og:url" content="http://junweiyang.me/2017/07/11/wargame2/index.html">
 <meta property="og:site_name" content="俊威小站">
+<meta property="og:description" content="Following with the previous challenge, I will continue from where I left off last time. Dodgy DaveDodgy Dave runs a betting agency. He sends out a hash the day before a big horse race to gullible bett">
+<meta property="og:updated_time" content="2017-07-17T02:13:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="俊威小站">
+<meta name="twitter:title" content="ELEC5616 Wargame 二">
+<meta name="twitter:description" content="Following with the previous challenge, I will continue from where I left off last time. Dodgy DaveDodgy Dave runs a betting agency. He sends out a hash the day before a big horse race to gullible bett">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -129,60 +134,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-wargame2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/08/hello/" class="archive-article-date">
-  	<time datetime="2017-07-08T02:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/08/hello/">小站新开张</a>
+    <h1 class="article-title" itemprop="name">
+      ELEC5616 Wargame 二
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/11/wargame2/" class="archive-article-date">
+  	<time datetime="2017-07-11T12:34:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Following with the previous challenge, I will continue from where I left off last time.</p>
+<h2 id="Dodgy-Dave"><a href="#Dodgy-Dave" class="headerlink" title="Dodgy Dave"></a>Dodgy Dave</h2><p>Dodgy Dave runs a betting agency. He sends out a hash the day before a big horse race to gullible betters. After the race, he sends out the “original” bet he made the day before, which happens to have the winning horses. The idea is that you give him lots of money and he promises to give you even more back. Surprise surprise, it’s a scam. He’ll just disappear after taking lots of your money.<br><a id="more"></a></p>
+<p>Prove to Dodgy Dave’s clients that he’s going to cheat them by showing how Dave’s magic works. Find a message msga that collides with the first 32 bits (8 hex characters) of the SHA256 hash of msgb. You can put any string into the {} area as long as it only contains letters or numbers.</p>
+<p>MSGA: <code>Melbourne Cup: $5,000 on Horse A (Secret Number) [transaction id: {}]</code><br>MSGB: <code>Melbourne Cup: $5,000 on Horse B (Excess Knowledge) [transaction id: {}]</code></p>
+<p>Easy, easy. The logic behind the story is very straightforward, the difficult part is to implement the task with code. To start with, let’s import the required packages first.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> Crypto.Hash <span class="keyword">import</span> SHA256</div><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</div></pre></td></tr></table></figure></p>
+<p>Then we can initialise every before entering the iteration. Two messages with formatter can be defined for convenience during iterations later. Furthermore we also want to have the number of total hashes tried so far to be placed inside {} as well as a dictionary to store (msg_hash, hash_count) key value pair.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">msga = <span class="string">"Melbourne Cup: $5,000 on Horse A (Secret Number) [transaction id: &#123;%s&#125;]"</span></div><div class="line">msgb = <span class="string">"Melbourne Cup: $5,000 on Horse B (Excess Knowledge) [transaction id: &#123;%s&#125;]"</span></div><div class="line">total_hashes = <span class="number">0</span></div><div class="line">msg_dict = defaultdict(int)</div></pre></td></tr></table></figure></p>
+<p>Now the rest of code is shown below along with explanations.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="comment"># IDs in two messages are filled with hash count to test for collision</span></div><div class="line">    filled_msga = (msga % total_hashes).encode(<span class="string">"ascii"</span>)</div><div class="line">    filled_msgb = (msgb % total_hashes).encode(<span class="string">"ascii"</span>)</div><div class="line">    <span class="comment"># Hash two messages by taking only first 4 bytes</span></div><div class="line">    h1 = SHA256.new(filled_msga).hexdigest()[:<span class="number">8</span>]</div><div class="line">    h2 = SHA256.new(filled_msgb).hexdigest()[:<span class="number">8</span>]</div><div class="line">    <span class="comment"># All hashes of msgb are added to dict so upcoming hashes for msga</span></div><div class="line">    <span class="comment"># can be tested for collision with all hashes of msgb</span></div><div class="line">    m_dict[h2] = total_hashes</div><div class="line">    <span class="comment"># Check if collision between current msga between all previous msgb exists</span></div><div class="line">    <span class="keyword">if</span> h1 <span class="keyword">in</span> m_dict.keys():</div><div class="line">        <span class="comment"># Collision found, ids for msga and msgb are printed out</span></div><div class="line">	    print(total_hashes)</div><div class="line">	    print(m_dict[h1])</div><div class="line">	    <span class="keyword">break</span></div><div class="line">	total_hashes += <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>It is not expected to take a long time to execute codes above, considering finding collision with only first 32 bits is not a difficult task. But the general idea I got is with the increase in hash length finding a collision can be really really hard. But another implication is that with the tools available, questions become much easier now, but this is just a beginning …</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢请我吃Nene chicken～<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat_qrcode.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hello</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Wargame</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://junweiyang.me/2017/07/11/wargame2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/07/12/wargame3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ELEC5616 Wargame 三
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/07/09/wargame1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ELEC5616 Wargame 一</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -192,7 +312,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Junwei
+    		&copy; 2017 Junwei
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -205,8 +325,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -285,6 +405,14 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Wargame</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cryptography</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hello</a>

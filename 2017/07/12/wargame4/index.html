@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://junweiyang.me">
-  <title>Archives: 2017/7 | 俊威小站</title>
+  <title>ELEC5616 Wargame 四 | 俊威小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="俊威小站">
-<meta property="og:url" content="http://junweiyang.me/archives/2017/07/index.html">
+  <meta name="description" content="Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography. MooseWe found the following message scrawled on the">
+<meta name="keywords" content="Wargame,Cryptography">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ELEC5616 Wargame 四">
+<meta property="og:url" content="http://junweiyang.me/2017/07/12/wargame4/index.html">
 <meta property="og:site_name" content="俊威小站">
+<meta property="og:description" content="Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography. MooseWe found the following message scrawled on the">
+<meta property="og:updated_time" content="2017-07-17T02:13:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="俊威小站">
+<meta name="twitter:title" content="ELEC5616 Wargame 四">
+<meta name="twitter:description" content="Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography. MooseWe found the following message scrawled on the">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -129,60 +134,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-wargame4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/08/hello/" class="archive-article-date">
-  	<time datetime="2017-07-08T02:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/08/hello/">小站新开张</a>
+    <h1 class="article-title" itemprop="name">
+      ELEC5616 Wargame 四
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/12/wargame4/" class="archive-article-date">
+  	<time datetime="2017-07-12T03:10:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Two challenges will be discussed in this entry. The first one is mainly about breaking a vigenere cipher, and the second one is about steganography.</p>
+<h2 id="Moose"><a href="#Moose" class="headerlink" title="Moose"></a>Moose</h2><p>We found the following message scrawled on the side of a can of tinned moose, next to the body of one of our agents. The label reads:</p>
+<p>Moose (Alces alces) is the North American name for the largest extant species in the deer family. The same animal is called the Elk in Europe. The name moose is derived from the Algonquian Eastern Abnaki name moz, meaning “he trims, shaves”. Moose are distinguished by the palmate antlers of the males; other members of the family have antlers with a “twig-like” configuration. The name Elk is applied, in North America, to the second largest deer species.an animal also called the wapiti.</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">MPSDV DBDPC ZRIWJ PNCYZ XODEH KVXNP NSHML DCSIS CXVYR NPMIS PMHIZ IMLNC EVLML</div><div class="line">PQSBX DEINR LXTTN SIZXU DDTGI GBOAD RMGRF ESEVM FEEMV MWJRE ZRBWF DRZTX HSESR</div><div class="line">YZEFD MDRIV FDQTM XXTPN SWCKM LSDGC KJEEC YKTOL DZKCB EPPZV TXTCE FPMLK FRHHQ</div><div class="line">JVPSD XTTQC OSIKM JZNCI AWSZI SWLXM LPDVA HOYEK IAVSD TQEDT JWLDE CLFTN CYKTE</div><div class="line">CEHRB XHCEK EAXDF RHXMG BEINR IEFOU BEVTE LABSV LFTLK IZEFR OTZMK OPMDR BWVNA</div><div class="line">MELTB FSTNM MEPCD WUXOL CDWTL PKOYP</div></pre></td></tr></table></figure>
+<p>What is the key?</p>
+<p>This question is easy. By looking at the form of ciphertext and the fact that we are asked for the key, I would say it is likely to be encrypted with an alphabetic substitution cipher. After I randomly find a Vigenere online solver and plug in the ciphertext, the key can be easily retrieved.</p>
+<h2 id="Look-Deeper"><a href="#Look-Deeper" class="headerlink" title="Look Deeper"></a>Look Deeper</h2><p>It was&nbsp;the best&nbsp;of times, it was the worst&nbsp;of&nbsp;times, it was the age&nbsp;of wisdom,&nbsp;it&nbsp;was&nbsp;the age of&nbsp;foolishness,&nbsp;it was&nbsp;the&nbsp;epoch&nbsp;of belief, it&nbsp;was&nbsp;the epoch of&nbsp;incredulity,&nbsp;it&nbsp;was the&nbsp;season of Light, it&nbsp;was&nbsp;the season of&nbsp;Darkness,&nbsp;it was the&nbsp;spring&nbsp;of hope,&nbsp;it&nbsp;was the winter of&nbsp;despair,&nbsp;we had everything before us, we&nbsp;had&nbsp;nothing before&nbsp;us,&nbsp;we&nbsp;were all going&nbsp;direct&nbsp;to Heaven,&nbsp;we&nbsp;were&nbsp;all&nbsp;going direct&nbsp;the&nbsp;other&nbsp;way - in&nbsp;short,&nbsp;the period&nbsp;was&nbsp;so far like the&nbsp;present&nbsp;period, that&nbsp;some&nbsp;of its&nbsp;noisiest&nbsp;authorities&nbsp;insisted&nbsp;on its&nbsp;being&nbsp;received,&nbsp;for good or for evil, in&nbsp;the&nbsp;superlative degree of&nbsp;comparison only.&nbsp;Decrypt!</p>
+<p>At the beginning I had no idea of what’s going on in this question, but as the rule said we are not doing an arts course, the context itself must be useless. The trick of this question is to investigate the source code of the page, and you will find two types of space are used to make up this paragraph, which are normal space and non-breaking space respectively. If we take them out and replace them with 0 and 1, we will get a binary string <code>0101000001 ...</code>. Then after converting the binary string to ascii text the password will be revealed.</p>
+<p>This type of concealing secrets is really fun, another challenge released later has also stressed this type of technique.</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢请我吃Nene chicken～<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat_qrcode.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hello</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Wargame</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cryptography</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://junweiyang.me/2017/07/12/wargame4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/07/13/wargame5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ELEC5616 Wargame 五
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/07/12/wargame3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ELEC5616 Wargame 三</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -192,7 +314,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Junwei
+    		&copy; 2017 Junwei
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -205,8 +327,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -285,6 +407,14 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Wargame</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cryptography</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hello</a>
